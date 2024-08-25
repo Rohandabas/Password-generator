@@ -9,26 +9,29 @@
 </head>
 
 <body>
-    <div id="wrapper"   class="bg-teal-800 w-[100vw] h-[100vh] flex items-center justify-center box-border">
+    <div id="wrapper" class="bg-teal-800 w-[100vw] h-[100vh] flex items-center justify-center box-border">
         <div id="card" class=" flex flex-col gap-5  ">
             <div id="heading" class=" text-white ">
                 <h1><strong>PASSWORD GENERATOR</strong></h1>
             </div>
-            <div id="pasdisp" class=" flex flex-row items-center justify-center gap-20 bg-teal-950 opacity-90 rounded shadow-2xl  shadow-white-500/50 ">
+            <div id="pasdisp"
+                class=" flex flex-row items-center justify-center gap-20 bg-teal-950 opacity-90 rounded shadow-2xl  shadow-white-500/50 ">
                 <!-- <h1 class="mt-2 mb-2">hlo</h1> -->
-                <input type="text" placeholder="Password" class="display mt-2 mb-2"  data-passwordDisplay id="passdip" >
+                <input type="text" placeholder="Password" class="display mt-2 mb-2" data-passwordDisplay id="passdip">
                 <button class="mt-2 mb-2">
                     <span data-copyMsg></span>
                     <img src="copy.svg" alt="cpy" width="30px" height="10px">
                 </button>
             </div>
-            <div id="genpass" class=" flex flex-col justify-center items-center gap-4 bg-teal-950 opacity-90 rounded  shadow shadow-pink-400 ">
+            <div id="genpass"
+                class=" flex flex-col justify-center items-center gap-4 bg-teal-950 opacity-90 rounded  shadow shadow-pink-400 ">
                 <div id="g1" class="mt-2 flex flex-row gap-5">
                     <p id="plen">Password Length</p>
-                    <p  id="datalen" data-lengthNumber></p>
+                    <p id="datalen" data-lengthNumber></p>
                 </div>
                 <div id="slidecontainer" class="flex justify-center items-center accent-pink-400">
-                    <input type="range" min="1" max="20" value="50"  step="1" class="slider" id="myRange" oninput="myfunction()">
+                    <input type="range" min="1" max="20" value="50" step="1" class="slider" id="myRange"
+                        oninput="myfunction()">
                 </div>
 
                 <div id="check">
@@ -39,7 +42,7 @@
                     <input type="checkbox" id="c3" name="vehicle3" value="Boat">
                     <label for="vehicle3"> Include Numbers</label><br>
                     <input type="checkbox" id="c4" name="vehicle4" value="plane">
-                    <label for="vehicle4"> Include Symbols</label><br> 
+                    <label for="vehicle4"> Include Symbols</label><br>
                 </div>
                 <div id="hardness" class="flex flex-row gap-16 ">
                     <p id="level">strength</p>
@@ -55,25 +58,77 @@
 
 
     <script>
-        let slider=document.getElementById('myRange');
-        let shown=document.getElementById('datalen');
-        let p=15
-        function hlo(){
-        slider.value=p;
-        shown.innerText=slider.value;
+
+        //handle slider and its updation
+        let slider = document.getElementById('myRange');
+        let shown = document.getElementById('datalen');
+        let p = 15
+        function hlo() {
+            slider.value = p;
+            shown.innerText = slider.value;
         }
         hlo();
-        function myfunction(){
-            shown.innerText=slider.value;
+        function myfunction() {
+            shown.innerText = slider.value;
         }
 
 
-        function getrndint(min,max){
-            return Math.floor(Math.random()*(max-min))+min;
-        }
-        
 
-        
+        //strength color
+        const indicator = document.querySelector("[data-indicator]");
+        function setIndicator(color) {
+            indicator.style.backgroundcolor = color;
+        }
+
+
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function generateRandomNumber() {
+
+            return getRndInteger(0, 9);
+        }
+
+        function generateLowerCase() {
+            return string.fromCharCode(getRndInteger(97, 123));
+        }
+
+        function generateUpperCase() {
+            return string.fromCharCode(getRndInteger(65, 91));
+        }
+
+        const Symbols = '!@#$%^&*()_+'
+        function generateSymbol() {
+            const randNum=getRndInteger(0,Symbols.length);
+
+            return Symbols.charAt[randNum];
+            
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </script>
 
