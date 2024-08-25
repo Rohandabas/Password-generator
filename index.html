@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="wrapper"   class="bg-teal-800 w-[100vw] h-[100vh] flex items-center justify-center box-border">
+        <div id="card" class=" flex flex-col gap-5  ">
+            <div id="heading" class=" text-white ">
+                <h1><strong>PASSWORD GENERATOR</strong></h1>
+            </div>
+            <div id="pasdisp" class=" flex flex-row items-center justify-center gap-20 bg-teal-950 opacity-90 rounded shadow-2xl  shadow-white-500/50 ">
+                <!-- <h1 class="mt-2 mb-2">hlo</h1> -->
+                <input type="text" placeholder="Password" class="display mt-2 mb-2"  data-passwordDisplay id="passdip" >
+                <button class="mt-2 mb-2">
+                    <span data-copyMsg></span>
+                    <img src="copy.svg" alt="cpy" width="30px" height="10px">
+                </button>
+            </div>
+            <div id="genpass" class=" flex flex-col justify-center items-center gap-4 bg-teal-950 opacity-90 rounded  shadow shadow-pink-400 ">
+                <div id="g1" class="mt-2 flex flex-row gap-5">
+                    <p id="plen">Password Length</p>
+                    <p  id="datalen" data-lengthNumber></p>
+                </div>
+                <div id="slidecontainer" class="flex justify-center items-center accent-pink-400">
+                    <input type="range" min="1" max="20" value="50"  step="1" class="slider" id="myRange" oninput="myfunction()">
+                </div>
+
+                <div id="check">
+                    <input type="checkbox" id="c1" name="vehicle1" value="Bike">
+                    <label for="vehicle1"> Include Uppercase</label><br>
+                    <input type="checkbox" id="c2" name="vehicle2" value="Car">
+                    <label for="vehicle2"> Include Lowercase</label><br>
+                    <input type="checkbox" id="c3" name="vehicle3" value="Boat">
+                    <label for="vehicle3"> Include Numbers</label><br>
+                    <input type="checkbox" id="c4" name="vehicle4" value="plane">
+                    <label for="vehicle4"> Include Symbols</label><br> 
+                </div>
+                <div id="hardness" class="flex flex-row gap-16 ">
+                    <p id="level">strength</p>
+                    <div data-indicator class="bg-blue-500 w-8 h-8"></div>
+                </div>
+
+                <div id="genbut" class="flex justify-center mb-4">
+                    <button id="generate" class="bg-pink-400 rounded-md p-2">GENERATE PASSWORD</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let slider=document.getElementById('myRange');
+        let shown=document.getElementById('datalen');
+        let p=15
+        function hlo(){
+        slider.value=p;
+        shown.innerText=slider.value;
+        }
+        hlo();
+        function myfunction(){
+            shown.innerText=slider.value;
+        }
+
+
+        function getrndint(min,max){
+            return Math.floor(Math.random()*(max-min))+min;
+        }
+        
+
+        
+
+    </script>
+
+</body>
+
+</html>

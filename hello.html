@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="wrapper" class="bg-teal-800 w-[100vw] h-[100vh] flex items-center justify-center box-border">
+        <div id="card" class="flex flex-col gap-5">
+            <div id="heading" class="text-white">
+                <h1><strong>PASSWORD GENERATOR</strong></h1>
+            </div>
+            <div id="pasdisp" class="flex flex-row items-center justify-center gap-20 bg-teal-950 rounded shadow-2xl shadow-cyan-500/50 p-4">
+                <h1 class="mt-2 mb-2">hlo</h1>
+                <button class="mt-2 mb-2">34</button>
+            </div>
+            <div id="genpass" class="flex flex-col justify-center items-center gap-4 bg-teal-950 rounded">
+                <div id="g1" class="mt-2 flex flex-row gap-5">
+                    <h1 id="plen">Password Length</h1>
+                    <h1 id="pint">10</h1>
+                </div>
+                <div id="slidecontainer" class="flex justify-center items-center">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                </div>
+
+                <div id="check">
+                    <input type="checkbox" id="c1" name="vehicle1" value="Bike">
+                    <label for="vehicle1"> Include Uppercase</label><br>
+                    <input type="checkbox" id="c2" name="vehicle2" value="Car">
+                    <label for="vehicle2"> Include Lowercase</label><br>
+                    <input type="checkbox" id="c3" name="vehicle3" value="Boat">
+                    <label for="vehicle3"> Include Numbers</label><br>
+                    <input type="checkbox" id="c4" name="vehicle4" value="plane">
+                    <label for="vehicle4"> Include Symbols</label><br>
+                </div>
+                <div id="hardness" class="flex flex-row gap-16">
+                    <p id="level">strength</p>
+                    <div id="circle" class="bg-blue-500 w-8 h-8"></div>
+                </div>
+
+                <div id="genbut" class="flex justify-center mb-4">
+                    <button id="generate" class="bg-pink-400 rounded-md">GENERATE PASSWORD</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
